@@ -1,0 +1,44 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17/08/2018, 23:50:59
+    Author     : Death
+*/
+
+.desaqui1 
+{ 
+    width: 200px; height: 50px; background-color: pink; 
+}
+.desaqui2 
+{ 
+    width: 400px; height: 100px; background-color: green; 
+    position: relative;
+    animation-name: sobeDesce;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes sobeDesce 
+{
+    from 
+    {
+        background-color: red;
+        top: 0px;
+    }
+    to 
+    {
+        background-color: yellow;
+        top: -50px;
+    }
+}
+
+.sth_ring
+{
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+}

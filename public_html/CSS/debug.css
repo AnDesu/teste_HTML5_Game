@@ -1,0 +1,32 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17/08/2018, 23:50:59
+    Author     : Death
+*/
+
+.debugMenu
+{ 
+    position: fixed;
+    z-index: 999999;    
+    
+    color: white;
+    font-size: 12rem;
+    font-weight: bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    
+    /*background-color: grey;*/
+}
+
+.debugBg1
+{
+    background-color: plum;
+}
+
+.debugBg2
+{
+    background-color: bisque;
+}

@@ -1,0 +1,109 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+//################
+//### Controle ###
+//################
+
+var maxVal_gameButton = 60;
+
+var keyArrowUp = 38;
+var fireArrowUp = 0;
+var gameArrowUp = 0;
+
+var keyButton1 = 65;
+var fireButton1 = 0;
+var gameButton1 = 0;
+
+function getControls() {
+    document.addEventListener('keydown',
+            function (event) {
+//        alert("Tecla "+event.keyCode);
+                if (event.keyCode === keyButton1)
+                {
+                    fireButton1 = 1;
+                }
+                if (event.keyCode === keyArrowUp)
+                {
+                    fireArrowUp = 1;
+                }
+            }
+    );
+    document.addEventListener('keyup',
+            function (event) {
+                if (event.keyCode === keyButton1)
+                {
+                    fireButton1 = 0;
+                }
+                if (event.keyCode === keyArrowUp)
+                {
+                    fireArrowUp = 0;
+                }
+            }
+    );
+
+    if (fireButton1 > 0)
+    {
+        gameButton1++;
+        gameButton1 = Math.min(maxVal_gameButton, gameButton1);
+    } else
+    {
+        gameButton1 = 0;
+    }
+    if (fireArrowUp > 0)
+    {
+        gameArrowUp++;
+        gameArrowUp = Math.min(maxVal_gameButton, gameArrowUp);
+    } else
+    {
+        gameArrowUp = 0;
+    }
+
+
+    debug_escrever("span_Debug_gameButton1", gameButton1);
+    debug_escrever("span_Debug_gameArrowUp", gameArrowUp);
+}
+
+
+//###############
+//### Colisao ###
+//###############
+
+function collision(obj1, obj2) {
+    var rect1 = obj1.getBoundingClientRect();
+    var rect2 = obj2.getBoundingClientRect();
+
+    var overlap = !(rect1.right < rect2.left ||
+            rect1.left > rect2.right ||
+            rect1.bottom < rect2.top ||
+            rect1.top > rect2.bottom);
+
+    debug_escrever("result", overlap);
+}
+
+
+
+//#################
+//### main loop ###
+//#################
+
+window.setInterval(function () {
+    getControls();
+    doAnimations();
+
+    collision(document.getElementById("div1"), document.getElementById("div2"));
+}, 60);
+
+
+
+//#############
+//### debug ###
+//#############
+
+function debug_escrever(id_Elemento, texto_Elemento)
+{
+    document.getElementById(id_Elemento).innerHTML = texto_Elemento;
+}
