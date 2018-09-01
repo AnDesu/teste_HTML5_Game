@@ -1,28 +1,35 @@
-//STH_Ring.gif
-function myFunction() {
-    var x = document.getElementsByClassName("example");
-    x[0].innerHTML = "Hello World!";
+
+function animationsInit()
+{
+    var allAnimationElements = document.getElementsByClassName("animationGroup");
+    for (i = 0; i < allAnimationElements.length; i++)
+    {
+        var oneAnimationElement = allAnimationElements[i];
+        
+        //STH_Ring.gif
+        if(oneAnimationElement.classList.contains("sth_ring"))
+        {
+            oneAnimationElement.innerHTML = '<img src="IMG/STH_Ring.gif">';
+            oneAnimationElement.setAttribute('data-frame_size', '16');            
+            oneAnimationElement.setAttribute('data-animation_frame', '0');
+            oneAnimationElement.setAttribute('data-animation_last_frame', '4');
+            oneAnimationElement.setAttribute('data-animation_speed', '2');
+        }
+    }
 }
 
-var animationFrame = 0;
-var maring = -16;
+var globalAnimationFrame = 0;
 function doAnimations()
 {
-    animationFrame = animationFrame + 0.5;
-    if (animationFrame === 1.5)
+    globalAnimationFrame = (globalAnimationFrame+1)%100000;
+    
+    var allAnimationElements = document.getElementsByClassName("animationGroup");
+    for (i = 0; i < allAnimationElements.length; i++)
     {
-        var x = document.getElementsByClassName("sth_ring");
-        var y = x[0].getElementsByTagName('img');
-//        alert(maring);
-        y[0].style.marginTop = maring+"px";
-        maring = maring - 16;
-        if(maring < -48)
-        {
-            maring = 0;
-        }
-        animationFrame = 0;
+        var oneAnimationElement = allAnimationElements[i];
+        var elementGraphic = oneAnimationElement.getElementsByTagName('img');
+        
+        var marginTopValue = ((Math.floor(globalAnimationFrame/parseInt(oneAnimationElement.dataset.animation_speed)))%parseInt(oneAnimationElement.dataset.animation_last_frame))*(0-parseInt(oneAnimationElement.dataset.frame_size));
+        elementGraphic[0].style.marginTop =  marginTopValue +"px";
     }
-
-//    x[0].style.paddingTop = "10px";
-
 }

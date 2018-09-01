@@ -8,6 +8,11 @@ and open the template in the editor.
     Author     : Death
 */
 
+.gameMainDiv
+{
+    display: none;
+}
+
 .desaqui1 
 { 
     width: 200px; height: 50px; background-color: pink; 
@@ -34,11 +39,4 @@ and open the template in the editor.
         background-color: yellow;
         top: -50px;
     }
-}
-
-.sth_ring
-{
-    width: 16px;
-    height: 16px;
-    overflow: hidden;
 }

@@ -11,8 +11,7 @@ and open the template in the editor.
 .debugMenu
 { 
     position: fixed;
-    z-index: 999999;    
-    
+    z-index: 999999;        
     color: white;
     font-size: 12rem;
     font-weight: bold;

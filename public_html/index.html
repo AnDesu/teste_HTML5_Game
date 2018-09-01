@@ -12,42 +12,78 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" type="text/css" href="CSS/principal.css">
         <link rel="stylesheet" type="text/css" href="CSS/debug.css">
-        <link rel="stylesheet" type="text/css" href="CSS/objetos.css">
+        <link rel="stylesheet" type="text/css" href="CSS/tags.css">
+        <link rel="stylesheet" type="text/css" href="CSS/principal.css">        
+        
+        <link rel="stylesheet" type="text/css" href="CSS/animation_inGameplayObjects.css">        
     </head>
     <body>
+
+
+
+        <!--            
+            #############
+            ### debug ###
+            #############
+        -->
+
         <div class="debugMenu" id="div_Debug">
-            <p>
-                @Fire Button 1: <span id="span_Debug_gameButton1">false</span>
-                @Key Up: <span id="span_Debug_gameArrowUp">false</span>
-            </p>
-            <p>
-                Colliding? <span id="result">false</span>
-            </p>
+            <div>
+                <p>
+                    @Fire Button 1: <span id="span_Debug_gameButton1">false</span>
+                    @Key Up: <span id="span_Debug_gameArrowUp">false</span>
+                </p>
+                <p>
+                    Colliding? <span id="result">false</span>
+                </p>
+            </div>
         </div>
 
-        <div>
 
+
+        <!--            
+            ############
+            ### game ###
+            ############
+        -->
+
+        <div class="gameMainDiv" id="gameMainDiv">
             <div class="desaqui1" id="div1">
                 Div1
             </div><br/>
             <div class="desaqui2" id="div2">
                 Div2
             </div>
-            
-            <div class="sth_ring">
-                <img src="IMG/STH_Ring.gif">
-                
-            </div>
 
+            <div class="animationGroup sth_ring"></div>
+            <div class="animationGroup sth_ring"></div><div class="animationGroup sth_ring"></div><div class="animationGroup sth_ring"></div><div class="animationGroup sth_ring"></div><div class="animationGroup sth_ring"></div>
             
         </div>
 
-        <!--desaqui junk-->
+        <!--            
+            ####################
+            ### desaqui junk ###
+            ####################
+        -->
+
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
+
+
+        <!--            
+            ################
+            ### Includes ###
+            ################
+        -->
+
+        <script type="text/javascript" src="JS/debug.js"></script>
         <script type="text/javascript" src="JS/principal.js"></script>
+        <script type="text/javascript" src="JS/controls.js"></script>
+
+        <script type="text/javascript" src="JS/objetos.js"></script>
         <script type="text/javascript" src="JS/animations.js"></script>
+
+        <script type="text/javascript" src="JS/gameplay.js"></script>
     </body>
 </html>
