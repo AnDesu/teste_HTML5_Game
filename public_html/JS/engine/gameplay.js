@@ -2,11 +2,14 @@
 //### actions ###
 //###############
 
-function doActions()
+function gamply_doActions()
 {
+    //Mostrar Debug Menu
     if (gameButton1 == 1)
     {
         debugOnState++;
-        debugSetVisible();
+        debug_SetVisible();
     }
+    
+    
 }

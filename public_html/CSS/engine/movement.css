@@ -1,0 +1,11 @@
+.movmnt_Area
+{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.movmnt_Group
+{
+    position: absolute;
+}

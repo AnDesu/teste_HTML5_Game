@@ -12,7 +12,7 @@ var keyButton1 = 65;
 var fireButton1 = 0;
 var gameButton1 = 0;
 
-function getControls() {
+function contrls_getControls() {
     document.addEventListener('keydown',
             function (event) {
 //        alert("Tecla "+event.keyCode);
@@ -57,6 +57,6 @@ function getControls() {
     }
 
 
-    debug_escrever("span_Debug_gameButton1", gameButton1);
-    debug_escrever("span_Debug_gameArrowUp", gameArrowUp);
+    debug_Escrever("id_debug_GameButton1", gameButton1);
+    debug_Escrever("id_debug_GameArrowUp", gameArrowUp);
 }

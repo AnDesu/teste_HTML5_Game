@@ -63,8 +63,8 @@ function getControls() {
     }
 
 
-    debug_escrever("span_Debug_gameButton1", gameButton1);
-    debug_escrever("span_Debug_gameArrowUp", gameArrowUp);
+    debug_Escrever("span_Debug_gameButton1", gameButton1);
+    debug_Escrever("span_Debug_gameArrowUp", gameArrowUp);
 }
 
 
@@ -81,7 +81,7 @@ function collision(obj1, obj2) {
             rect1.bottom < rect2.top ||
             rect1.top > rect2.bottom);
 
-    debug_escrever("result", overlap);
+    debug_Escrever("result", overlap);
 }
 
 
@@ -103,7 +103,7 @@ window.setInterval(function () {
 
 
 window.onload = function() {
-  debugInit();
+  debug_Init();
   
   
 };

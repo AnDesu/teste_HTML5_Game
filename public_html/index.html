@@ -12,11 +12,13 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" type="text/css" href="CSS/debug.css">
-        <link rel="stylesheet" type="text/css" href="CSS/tags.css">
-        <link rel="stylesheet" type="text/css" href="CSS/principal.css">        
-        
-        <link rel="stylesheet" type="text/css" href="CSS/animation_inGameplayObjects.css">        
+        <link rel="stylesheet" type="text/css" href="CSS/engine/debug.css">
+        <link rel="stylesheet" type="text/css" href="CSS/engine/tags.css">
+        <link rel="stylesheet" type="text/css" href="CSS/engine/principal.css">        
+        <link rel="stylesheet" type="text/css" href="CSS/engine/animation.css">        
+        <link rel="stylesheet" type="text/css" href="CSS/engine/movement.css">        
+
+        <link rel="stylesheet" type="text/css" href="CSS/objects/animation_inGameplayObjects.css">        
     </head>
     <body>
 
@@ -28,14 +30,14 @@ and open the template in the editor.
             #############
         -->
 
-        <div class="debugMenu" id="div_Debug">
+        <div class="debugMenu" id="id_debug_Div">
             <div>
                 <p>
-                    @Fire Button 1: <span id="span_Debug_gameButton1">false</span>
-                    @Key Up: <span id="span_Debug_gameArrowUp">false</span>
+                    @Fire Button 1: <span id="id_debug_GameButton1">false</span>
+                    @Key Up: <span id="id_debug_GameArrowUp">false</span>
                 </p>
                 <p>
-                    Colliding? <span id="result">false</span>
+                    Colliding? <span id="id_debug_CollisionResult">false</span>
                 </p>
             </div>
         </div>
@@ -48,17 +50,22 @@ and open the template in the editor.
             ############
         -->
 
-        <div class="gameMainDiv" id="gameMainDiv">
-            <div class="desaqui1" id="div1">
-                Div1
-            </div><br/>
-            <div class="desaqui2" id="div2">
-                Div2
+        <div class="gameMainDiv disply_none debugBg1" id="id_gameMainDiv">
+
+            <div title="Algum estagio" class="movmnt_Area debugBg2">
+                
+                <div class="anmtn_Group desaqui1" id="div1">
+                    Div1
+                </div><br/>
+                <div class="desaqui2" id="div2">
+                    Div2
+                </div>
+
+                <div class="objcts_setUp anmtn_sthRing"></div>
+                <div class="objcts_setUp anmtn_sthRing"></div><div class="objcts_setUp anmtn_sthRing"></div><div class="objcts_setUp anmtn_sthRing"></div><div class="objcts_setUp anmtn_sthRing"></div><div class="objcts_setUp anmtn_sthRing"></div><div class="objcts_setUp anmtn_sthRing"></div><div class="objcts_setUp anmtn_sthRing"></div>
+                
             </div>
 
-            <div class="animationGroup sth_ring"></div>
-            <div class="animationGroup sth_ring"></div><div class="animationGroup sth_ring"></div><div class="animationGroup sth_ring"></div><div class="animationGroup sth_ring"></div><div class="animationGroup sth_ring"></div>
-            
         </div>
 
         <!--            
@@ -67,7 +74,7 @@ and open the template in the editor.
             ####################
         -->
 
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <!--<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->
 
 
 
@@ -77,13 +84,13 @@ and open the template in the editor.
             ################
         -->
 
-        <script type="text/javascript" src="JS/debug.js"></script>
-        <script type="text/javascript" src="JS/principal.js"></script>
-        <script type="text/javascript" src="JS/controls.js"></script>
+        <script type="text/javascript" src="JS/engine/debug.js"></script>
+        <script type="text/javascript" src="JS/engine/principal.js"></script>
+        <script type="text/javascript" src="JS/engine/controls.js"></script>
 
-        <script type="text/javascript" src="JS/objetos.js"></script>
-        <script type="text/javascript" src="JS/animations.js"></script>
+        <script type="text/javascript" src="JS/engine/objects.js"></script>
+        <script type="text/javascript" src="JS/engine/animations.js"></script>
 
-        <script type="text/javascript" src="JS/gameplay.js"></script>
+        <script type="text/javascript" src="JS/engine/gameplay.js"></script>
     </body>
 </html>
