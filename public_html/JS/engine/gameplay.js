@@ -11,5 +11,7 @@ function gamply_doActions()
         debug_SetVisible();
     }
     
+
+    gameplay_somaCruz();
     
 }

@@ -3,7 +3,7 @@
 //### Functions ###
 //#################
 
-function removeElement(element) {
+function objts_removeElement(element) {
     element && element.parentNode && element.parentNode.removeChild(element);
 }
 
@@ -13,7 +13,7 @@ function removeElement(element) {
 //### Colisao ###
 //###############
 
-function objts_collision(obj1, obj2) {
+function objts_isColliding(obj1, obj2) {
     var rect1 = obj1.getBoundingClientRect();
     var rect2 = obj2.getBoundingClientRect();
 
@@ -23,6 +23,8 @@ function objts_collision(obj1, obj2) {
             rect1.top > rect2.bottom);
 
     debug_Escrever("id_debug_CollisionResult", overlap);
+    
+    return overlap;
 }
 
 
@@ -44,19 +46,41 @@ function objcts_Init()
             objcts_Init_sthRing(oneObjctsSetUpElement);
             continue;
         }
+        if (oneObjctsSetUpElement.classList.contains("anmtn_somaCruz"))
+        {
+            objcts_Init_somaCruz(oneObjctsSetUpElement);
+            continue;
+        }
     }
 }
 
-function objcts_Init_sthRing(oneObjctsSetUpElement)
+
+
+//######################
+//### Active Objects ###
+//######################
+
+var isActivatingObjects = false;
+function objts_getActiveObjects()
 {
-    oneObjctsSetUpElement.innerHTML = '<img src="IMG/STH_Ring.gif">';
-
-    oneObjctsSetUpElement.setAttribute('data-frame_size', '16');
-    oneObjctsSetUpElement.setAttribute('data-animation_frame', '0');
-    oneObjctsSetUpElement.setAttribute('data-animation_last_frame', '4');
-    oneObjctsSetUpElement.setAttribute('data-animation_speed', '2');
-
-    oneObjctsSetUpElement.classList.add("anmtn_Group", "movmnt_Group");
-
-    oneObjctsSetUpElement.style.top = 100 + Math.floor(Math.random() * 101)*3 +  "px";
+    if (typeof Count_STH_Ring != "undefined")
+    {
+        Active_STH_Ring.length = 0;
+    }
+    
+    
+    var allObjctsActive = document.getElementsByClassName("actv_Group"); 
+    for (i = 0; i < allObjctsActive.length; i++)
+    {
+        if( !(objts_isColliding(allObjctsActive[i], document.getElementById("gameActiveArea"))) )
+        {
+            continue;
+        }
+        
+        if (allObjctsActive[i].classList.contains("anmtn_sthRing"))
+        {
+            objcts_setActive_sthRing(allObjctsActive[i]);
+            continue;
+        }
+    }             
 }

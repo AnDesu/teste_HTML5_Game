@@ -17,7 +17,8 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="CSS/engine/principal.css">        
         <link rel="stylesheet" type="text/css" href="CSS/engine/animation.css">        
         <link rel="stylesheet" type="text/css" href="CSS/engine/movement.css">        
-
+        
+        <link rel="stylesheet" type="text/css" href="CSS/objects/colisors.css">   
         <link rel="stylesheet" type="text/css" href="CSS/objects/animation_inGameplayObjects.css">        
     </head>
     <body>
@@ -33,11 +34,23 @@ and open the template in the editor.
         <div class="debugMenu" id="id_debug_Div">
             <div>
                 <p>
-                    @Fire Button 1: <span id="id_debug_GameButton1">false</span>
-                    @Key Up: <span id="id_debug_GameArrowUp">false</span>
+                    @FirButtn1: <span id="id_debug_GameButton1">false</span>
+                    @FirButtn2: <span id="id_debug_GameButton2">false</span>
+                    @FirButtn3: <span id="id_debug_GameButton3">false</span>
+                    @FirButtn4: <span id="id_debug_GameButton4">false</span>
+                </p>
+                <p>
+                    @KeyUp: <span id="id_debug_GameArrowUp">false</span>
+                    @KeyDown: <span id="id_debug_GameArrowDown">false</span>
+                    @KeyRight: <span id="id_debug_GameArrowRight">false</span>
+                    @KeyLeft: <span id="id_debug_GameArrowLeft">false</span>
+                    @ButtnStrt: <span id="id_debug_gameButtonStart">false</span>
                 </p>
                 <p>
                     Colliding? <span id="id_debug_CollisionResult">false</span>
+                </p>
+                <p>
+                    Selected object; posX = <span id="id_debug_selectedObjectPosX">0</span> ;  posY = <span id="id_debug_selectedObjectPosY">0</span>
                 </p>
             </div>
         </div>
@@ -52,7 +65,14 @@ and open the template in the editor.
 
         <div class="gameMainDiv disply_none debugBg1" id="id_gameMainDiv">
 
-            <div title="Algum estagio" class="movmnt_Area debugBg2">
+            <!--impede de copiarem com o mouse-->
+            <!--<div class="gameAntiCopy debugBg1"></div>-->
+            
+            <!--regiao ativa-->
+            <div id="gameActiveArea" class="gameActiveArea"></div>
+            
+            <!--algum estagio-->
+            <div class="movmnt_Area debugBg2">
                 
                 <div class="anmtn_Group desaqui1" id="div1">
                     Div1
@@ -61,6 +81,7 @@ and open the template in the editor.
                     Div2
                 </div>
 
+                <div class="objcts_setUp anmtn_somaCruz"></div>
                 <div class="objcts_setUp anmtn_sthRing"></div>
                 <div class="objcts_setUp anmtn_sthRing"></div><div class="objcts_setUp anmtn_sthRing"></div><div class="objcts_setUp anmtn_sthRing"></div><div class="objcts_setUp anmtn_sthRing"></div><div class="objcts_setUp anmtn_sthRing"></div><div class="objcts_setUp anmtn_sthRing"></div><div class="objcts_setUp anmtn_sthRing"></div>
                 
@@ -92,5 +113,8 @@ and open the template in the editor.
         <script type="text/javascript" src="JS/engine/animations.js"></script>
 
         <script type="text/javascript" src="JS/engine/gameplay.js"></script>
+        
+        <script type="text/javascript" src="JS/engine/behavior/STH_Ring.js"></script>
+        <script type="text/javascript" src="JS/engine/behavior/somaCruz.js"></script>
     </body>
 </html>

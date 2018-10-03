@@ -3,11 +3,48 @@
     width: 100%;
     height: 100%;
     
+    
+    overflow: hidden;
     /*opacity: 0;*/
+}
+
+.gameAntiCopy
+{
+    width: 100%;
+    height: 100%;    
+    position: fixed;
+    
+    z-index: 999998;
+    
+    opacity: 0;
+}
+
+.gameActiveArea
+{
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;    
+    position: fixed;
+    background-color: #0FFFFF;    
+    
+    z-index: 999997;
+    
+    visibility: hidden;
+    
+    opacity: 0.5;
 }
 
 .disply_none
 {
+    display: none;
+}
+
+/*selecao por mouse sem cor*/
+::-moz-selection { /* Code for Firefox */
+    display: none;
+}
+::selection {
     display: none;
 }
 
@@ -24,6 +61,8 @@
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
+
+
 
 @keyframes sobeDesce 
 {
