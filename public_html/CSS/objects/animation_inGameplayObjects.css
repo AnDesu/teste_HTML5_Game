@@ -1,10 +1,18 @@
 .anmtn_sthRing
 {
+    position: absolute;
+    
     width: 16px;
     height: 16px;
+    
+    overflow: hidden;
 }
 .anmtn_somaCruz
 {
+    position: absolute;
+    
     width: 65px;
     height: 65px;
+    
+    overflow: hidden;
 }

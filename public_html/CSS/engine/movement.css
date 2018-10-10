@@ -7,5 +7,10 @@
 
 .movmnt_Group
 {
+    width: 16px;
+    height: 16px;
+    
     position: absolute;
+    
+    background-color: red;
 }

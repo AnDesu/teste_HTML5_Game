@@ -32,6 +32,8 @@ window.onload = function () {
     main_GameInit();
 
     objcts_Init();
+    
+    contrls_Init();
 };
 
 function main_GameInit()
@@ -44,17 +46,4 @@ function main_GameInit()
 //### programing functions ###
 //############################
 
-var main_mousePosX = 0;
-var main_mousePosY = 0;
-document.onmousemove = function (event) {
-    main_mousePosX = event.clientX;
-    main_mousePosY = event.clientY;
-};
 
-var main_isMouseDown = false;
-document.body.onmousedown = function () {
-    main_isMouseDown = true;
-};
-document.body.onmouseup = function () {
-    main_isMouseDown = false;
-};

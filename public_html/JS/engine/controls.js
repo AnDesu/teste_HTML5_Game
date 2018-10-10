@@ -2,6 +2,11 @@
 //### Controle ###
 //################
 
+var main_mousePosX = 0;
+var main_mousePosY = 0;
+var main_isMouseDown = false;
+
+
 var maxVal_gameButton = 60;
 
 var keyArrowUp = 38;
@@ -38,10 +43,22 @@ var keyButtonStart = 13;
 var fireButtonStart = 0;
 var gameButtonStart = 0;
 
-function contrls_getControls() {
+function contrls_Init() {
+    document.onmousemove = function (event) {
+        main_mousePosX = event.clientX;
+        main_mousePosY = event.clientY;
+    };    
+    document.body.onmousedown = function () {
+        main_isMouseDown = true;
+    };
+    document.body.onmouseup = function () {
+        main_isMouseDown = false;
+    };
+    
+    
+
     document.addEventListener('keydown',
             function (event) {
-//        alert("Tecla "+event.keyCode);
                 if (event.keyCode === keyArrowUp)
                 {
                     fireArrowUp = 1;
@@ -49,11 +66,11 @@ function contrls_getControls() {
                 if (event.keyCode === keyArrowDown)
                 {
                     fireArrowDown = 1;
-                }				
+                }
                 if (event.keyCode === keyArrowLeft)
                 {
                     fireArrowLeft = 1;
-                }				
+                }
                 if (event.keyCode === keyArrowRight)
                 {
                     fireArrowRight = 1;
@@ -65,7 +82,7 @@ function contrls_getControls() {
                 if (event.keyCode === keyButton2)
                 {
                     fireButton2 = 1;
-                }                                
+                }
                 if (event.keyCode === keyButtonStart)
                 {
                     fireButtonStart = 1;
@@ -73,7 +90,7 @@ function contrls_getControls() {
             }
     );
     document.addEventListener('keyup',
-            function (event) {                
+            function (event) {
                 if (event.keyCode === keyArrowUp)
                 {
                     fireArrowUp = 0;
@@ -81,7 +98,7 @@ function contrls_getControls() {
                 if (event.keyCode === keyArrowDown)
                 {
                     fireArrowDown = 0;
-                }				
+                }
                 if (event.keyCode === keyArrowLeft)
                 {
                     fireArrowLeft = 0;
@@ -97,14 +114,82 @@ function contrls_getControls() {
                 if (event.keyCode === keyButton2)
                 {
                     fireButton2 = 0;
-                }                                
+                }
                 if (event.keyCode === keyButtonStart)
                 {
                     fireButtonStart = 0;
                 }
             }
     );
-         
+}
+
+function contrls_getControls() {
+//    document.addEventListener('keydown',
+//            function (event) {
+////        alert("Tecla "+event.keyCode);
+//                if (event.keyCode === keyArrowUp)
+//                {
+//                    fireArrowUp = 1;
+//                }
+//                if (event.keyCode === keyArrowDown)
+//                {
+//                    fireArrowDown = 1;
+//                }				
+//                if (event.keyCode === keyArrowLeft)
+//                {
+//                    fireArrowLeft = 1;
+//                }				
+//                if (event.keyCode === keyArrowRight)
+//                {
+//                    fireArrowRight = 1;
+//                }
+//                if (event.keyCode === keyButton1)
+//                {
+//                    fireButton1 = 1;
+//                }
+//                if (event.keyCode === keyButton2)
+//                {
+//                    fireButton2 = 1;
+//                }                                
+//                if (event.keyCode === keyButtonStart)
+//                {
+//                    fireButtonStart = 1;
+//                }
+//            }
+//    );
+//    document.addEventListener('keyup',
+//            function (event) {                
+//                if (event.keyCode === keyArrowUp)
+//                {
+//                    fireArrowUp = 0;
+//                }
+//                if (event.keyCode === keyArrowDown)
+//                {
+//                    fireArrowDown = 0;
+//                }				
+//                if (event.keyCode === keyArrowLeft)
+//                {
+//                    fireArrowLeft = 0;
+//                }
+//                if (event.keyCode === keyArrowRight)
+//                {
+//                    fireArrowRight = 0;
+//                }
+//                if (event.keyCode === keyButton1)
+//                {
+//                    fireButton1 = 0;
+//                }
+//                if (event.keyCode === keyButton2)
+//                {
+//                    fireButton2 = 0;
+//                }                                
+//                if (event.keyCode === keyButtonStart)
+//                {
+//                    fireButtonStart = 0;
+//                }
+//            }
+//    );
+
     if (fireArrowUp > 0)
     {
         gameArrowUp++;
@@ -112,7 +197,7 @@ function contrls_getControls() {
     } else
     {
         gameArrowUp = 0;
-    }  
+    }
     if (fireArrowDown > 0)
     {
         gameArrowDown++;
@@ -120,7 +205,7 @@ function contrls_getControls() {
     } else
     {
         gameArrowDown = 0;
-    }	
+    }
     if (fireArrowLeft > 0)
     {
         gameArrowLeft++;
@@ -152,7 +237,7 @@ function contrls_getControls() {
     } else
     {
         gameButton2 = 0;
-    }   
+    }
     if (fireButtonStart > 0)
     {
         gameButtonStart++;
@@ -161,14 +246,14 @@ function contrls_getControls() {
     {
         gameButtonStart = 0;
     }
-       
+
     debug_Escrever("id_debug_GameArrowUp", gameArrowUp);
     debug_Escrever("id_debug_GameArrowDown", gameArrowDown);
     debug_Escrever("id_debug_GameArrowRight", gameArrowRight);
     debug_Escrever("id_debug_GameArrowLeft", gameArrowLeft);
-    
+
     debug_Escrever("id_debug_GameButton1", gameButton1);
     debug_Escrever("id_debug_GameButton2", gameButton2);
-    
+
     debug_Escrever("id_debug_gameButtonStart", gameButtonStart);
 }

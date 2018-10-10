@@ -132,6 +132,11 @@ function debug_manipulateSelectedObject()
         return;
     }
 
+//if(!main_isMouseDown)
+//{
+//    return;
+//}
+
     var rect1 = selectedObject.getBoundingClientRect();
     debug_Escrever("id_debug_selectedObjectPosX", rect1.left);
     debug_Escrever("id_debug_selectedObjectPosY", rect1.top);
