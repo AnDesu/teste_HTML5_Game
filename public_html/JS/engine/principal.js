@@ -9,7 +9,9 @@ window.setInterval(function () {
     debug_run();
 
     contrls_getControls();
+    
     gamply_doActions();
+    gamply_doMovement();
     
     objts_getActiveObjects();
 

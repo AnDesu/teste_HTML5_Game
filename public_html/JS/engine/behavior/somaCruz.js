@@ -9,15 +9,27 @@ var colsrElement0 = null;
 
 function objcts_Init_somaCruz(oneObjctsSetUpElement)
 {
-    var elementHolder = null;
+    //  debug start position
+    
+    oneObjctsSetUpElement.style.left = "650px";
+    oneObjctsSetUpElement.style.top = "250px";
 
+
+    //create elements
+    
+    var elementHolder = null;
+    
     oneObjctsSetUpElement.innerHTML =
             '<img id="anmtn_somaCruz" class="anmtn_Group" src="IMG/engine_somaCruz.png">'
             + '<div id="colsrs_somaCruz" class="colsrs_Group colsrs_somaCruz"></div>'
-            + '<div id="movmnt_somaCruz" class="movmnt_Group"></div>'
             ;
-
-//    oneObjctsSetUpElement.classList.add("movmnt_Group");
+    var node_movmntElement0 = document.createElement('div');
+    oneObjctsSetUpElement.after(node_movmntElement0);
+    
+    
+    
+    //set attributes
+    
     oneObjctsSetUpElement.setAttribute('data-colisor_id', 'colsrs_somaCruz');
     oneObjctsSetUpElement.setAttribute('data-animation_id_n0', 'anmtn_somaCruz');
     oneObjctsSetUpElement.setAttribute('data-movement_id_n0', 'movmnt_somaCruz');
@@ -28,19 +40,23 @@ function objcts_Init_somaCruz(oneObjctsSetUpElement)
     elementHolder.setAttribute('data-animation_last_frame', '4');
     elementHolder.setAttribute('data-animation_speed', '14');
     elementHolder.setAttribute('data-animation_number', '0');
+    
+    node_movmntElement0.classList.add("movmnt_Group");
+    node_movmntElement0.setAttribute("id", "movmnt_somaCruz");
+    node_movmntElement0.setAttribute('data-position_offset_x', '-21');
+    node_movmntElement0.setAttribute('data-position_offset_y', '-23');
+    node_movmntElement0.setAttribute('data-movement_tomove_x', '-1');
+    node_movmntElement0.setAttribute('data-movement_tomove_y', '-1');
+    
+    node_movmntElement0.style.left = oneObjctsSetUpElement.style.left;
+    node_movmntElement0.style.top = oneObjctsSetUpElement.style.top;
+    // debug movement
+    node_movmntElement0.addEventListener("click", debug_selectObject);
 
     object_somaCruz = oneObjctsSetUpElement;
     anmtnElement0 = document.getElementById(object_somaCruz.dataset.animation_id_n0);
     movmntElement0 = document.getElementById(object_somaCruz.dataset.movement_id_n0);
     colsrElement0 = document.getElementById(object_somaCruz.dataset.colisor_id);
-
-//  start position
-
-    movmntElement0.style.left = "650px";
-    movmntElement0.style.top = "250px";
-    
-//    oneObjctsSetUpElement.style.left = "650px";
-//    oneObjctsSetUpElement.style.top = "250px";
 }
 
 
@@ -82,6 +98,7 @@ function anmtns_changAnmtns_somaCruz(anmtn_object, number)
 function gameplay_somaCruz()
 {
     //mudar animacao
+    
     if (gameArrowUp == 1 || gameArrowDown == 1)
     {
         anmtns_changAnmtns_somaCruz(anmtnElement0, 2);
@@ -95,8 +112,10 @@ function gameplay_somaCruz()
         anmtns_changAnmtns_somaCruz(anmtnElement0, 0);
     }
 
-    //movimentar
 
+
+    //movimentar
+    
     if (gameArrowUp > 0)
     {
         movmntElement0.style.top = (parseInt(movmntElement0.style.top) - 3) + "px";
@@ -114,26 +133,13 @@ function gameplay_somaCruz()
         movmntElement0.style.left = (parseInt(movmntElement0.style.left) - 3) + "px";
     }
 
+    object_somaCruz.style.top = parseInt(movmntElement0.style.top) + parseInt(movmntElement0.dataset.position_offset_y) + "px";
+    object_somaCruz.style.left = parseInt(movmntElement0.style.left) + parseInt(movmntElement0.dataset.position_offset_x) + "px";
 
 
-//    if (gameArrowUp > 0)
-//    {
-//        object_somaCruz.style.top = (parseInt(object_somaCruz.style.top) - 3) + "px";
-//    }
-//    if (gameArrowDown > 0)
-//    {
-//        object_somaCruz.style.top = (parseInt(object_somaCruz.style.top) + 3) + "px";
-//    }
-//    if (gameArrowRight > 0)
-//    {
-//        object_somaCruz.style.left = (parseInt(object_somaCruz.style.left) + 3) + "px";
-//    }
-//    if (gameArrowLeft > 0)
-//    {
-//        object_somaCruz.style.left = (parseInt(object_somaCruz.style.left) - 3) + "px";
-//    }
 
     //interagir STH_Ring
+    
     if (typeof Count_STH_Ring != "undefined")
     {
         var allSTH_Ring = Active_STH_Ring;

@@ -97,8 +97,9 @@ function debug_SetVisible()
 
 function debug_objectManipulation_Init()
 {
-    var objectsToManipulate = document.querySelector("#id_gameMainDiv").querySelectorAll(".objcts_setUp");
-
+    var objectsToManipulate = null;
+    
+    objectsToManipulate = document.querySelector("#id_gameMainDiv").querySelectorAll(".objcts_setUp");
     objectsToManipulate.forEach(function (objectToManipulate) {
         objectToManipulate.addEventListener("click", debug_selectObject);
     });
