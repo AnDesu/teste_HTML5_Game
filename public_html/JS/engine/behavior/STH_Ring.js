@@ -50,6 +50,8 @@ function objcts_Init_sthRing(oneObjctsSetUpElement)
     node_movmntElement0.setAttribute('data-movement_tomove_x', '-1');
     node_movmntElement0.setAttribute('data-movement_tomove_y', '-1');
     node_movmntElement0.setAttribute('data-movement_time_0', '0');
+    node_movmntElement0.style.left = 0 + "px";
+    node_movmntElement0.style.top = 0 + "px";
     
     // debug movement
     node_movmntElement0.addEventListener("click", debug_selectObject);

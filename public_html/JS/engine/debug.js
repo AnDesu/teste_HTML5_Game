@@ -26,7 +26,13 @@ function debug_Escrever(id_Elemento, texto_Elemento)
     {
         document.getElementById(id_Elemento).innerHTML = texto_Elemento;
     }
+    return;
+}
 
+function debug_Alert(texto)
+{
+    alert(texto);
+    return;
 }
 
 
