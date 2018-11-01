@@ -11,11 +11,15 @@ function gamply_doActions()
         debug_SetVisible();
     }
 
-
-    gameplay_somaCruz();
+    if (!main_isAnimationtPaused)
+    {
+        gameplay_somaCruz();
+    }
+    
 
     gameplay_movmnt_Sine0();
 
+    return;
 }
 
 //################
@@ -94,7 +98,7 @@ function gamply_doMovement()
 
         }
 
-    
+
 
     }
 

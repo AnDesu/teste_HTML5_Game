@@ -58,15 +58,21 @@ function objcts_Init_sthRing(oneObjctsSetUpElement)
     
 
     Count_STH_Ring++;
+    
+    return;
 }
 
 function objcts_setActive_sthRing(element)
 {
     Active_STH_Ring[(Active_STH_Ring.length)] = element;
+    
+    return;
 }
 
 function objts_removeElement_sthRing(element)
 {
     objts_removeElement(element);
     Count_STH_Ring--;
+    
+    return;
 }

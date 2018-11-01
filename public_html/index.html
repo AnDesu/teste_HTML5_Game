@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <title>
@@ -12,24 +8,32 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" type="text/css" href="CSS/engine/debug.css">
-        <link rel="stylesheet" type="text/css" href="CSS/engine/tags.css">
-        <link rel="stylesheet" type="text/css" href="CSS/engine/principal.css">        
-        <link rel="stylesheet" type="text/css" href="CSS/engine/animation.css">        
-        <link rel="stylesheet" type="text/css" href="CSS/engine/movement.css">        
         
-        <link rel="stylesheet" type="text/css" href="CSS/objects/colisors.css">   
-        <link rel="stylesheet" type="text/css" href="CSS/objects/animation_inGameplayObjects.css">        
+
+        <!--#############
+        ### CSS Files ###
+        ##############-->
+        
+        <link rel="stylesheet" type="text/css" href="CSS/engine/debug.css">
+
+        <link rel="stylesheet" type="text/css" href="CSS/engine/tags.css">        
+        <link rel="stylesheet" type="text/css" href="CSS/engine/principal.css">  
+
+        <link rel="stylesheet" type="text/css" href="CSS/engine/objects.css">
+        <link rel="stylesheet" type="text/css" href="CSS/engine/colisors.css">
+        <link rel="stylesheet" type="text/css" href="CSS/engine/movement.css">
+        <link rel="stylesheet" type="text/css" href="CSS/engine/animation.css">
+
+        <link rel="stylesheet" type="text/css" href="CSS/objects/inGameplayObjects_colisors.css">          
+        <link rel="stylesheet" type="text/css" href="CSS/objects/inGameplayObjects_animation.css">        
     </head>
     <body>
 
 
 
-        <!--            
-            #############
-            ### debug ###
-            #############
-        -->
+        <!--#########
+        ### Debug ###
+        ##########-->
 
         <div class="debugMenu" id="id_debug_Div">
             <div>
@@ -57,23 +61,21 @@ and open the template in the editor.
 
 
 
-        <!--            
-            ############
-            ### game ###
-            ############
-        -->
+        <!--########
+        ### Game ###
+        #########-->
 
         <div class="gameMainDiv disply_none debugBg1" id="id_gameMainDiv">
 
             <!--impede de copiarem com o mouse-->
             <!--<div class="gameAntiCopy debugBg1"></div>-->
-            
+
             <!--regiao ativa-->
             <div id="gameActiveArea" class="gameActiveArea"></div>
-            
+
             <!--algum estagio-->
             <div class="movmnt_Area debugBg2">
-                
+
                 <div class="desaqui1" id="div1">
                     Div1
                 </div><br/>
@@ -84,38 +86,38 @@ and open the template in the editor.
                 <div class="objcts_setUp anmtn_somaCruz"></div>
                 <div class="objcts_setUp anmtn_sthRing"></div>
                 <div class="objcts_setUp anmtn_sthRing"></div><div class="objcts_setUp anmtn_sthRing"></div><div class="objcts_setUp anmtn_sthRing"></div><div class="objcts_setUp anmtn_sthRing"></div><div class="objcts_setUp anmtn_sthRing"></div><div class="objcts_setUp anmtn_sthRing"></div><div class="objcts_setUp anmtn_sthRing"></div>
-                
+
             </div>
 
         </div>
 
-        <!--            
-            ####################
-            ### desaqui junk ###
-            ####################
-        -->
+        <!--################
+        ### Desaqui Junk ###
+        #################-->
 
+        <!-- Teste de barra de rolagem -->
         <!--<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->
 
 
 
-        <!--            
-            ################
-            ### Includes ###
-            ################
-        -->
+        <!--############
+        ### JS Files ###
+        #############-->
 
         <script type="text/javascript" src="JS/engine/debug.js"></script>
+        
         <script type="text/javascript" src="JS/engine/principal.js"></script>
         <script type="text/javascript" src="JS/engine/controls.js"></script>
 
         <script type="text/javascript" src="JS/engine/objects.js"></script>
         <script type="text/javascript" src="JS/engine/animations.js"></script>
-
         <script type="text/javascript" src="JS/engine/gameplay.js"></script>
-        
+
         <script type="text/javascript" src="JS/engine/behavior/STH_Ring.js"></script>
         <script type="text/javascript" src="JS/engine/behavior/somaCruz.js"></script>
         <script type="text/javascript" src="JS/engine/behavior/movmnt_Sine0.js"></script>
+        
+        
+        
     </body>
 </html>

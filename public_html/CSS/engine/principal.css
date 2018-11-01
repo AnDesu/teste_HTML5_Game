@@ -40,13 +40,17 @@
     display: none;
 }
 
-/*selecao por mouse sem cor*/
+
+
+/*selecao do mouse sem cor*/
 ::-moz-selection { /* Code for Firefox */
     display: none;
 }
 ::selection {
     display: none;
 }
+
+
 
 .desaqui1 
 { 

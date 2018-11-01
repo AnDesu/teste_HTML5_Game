@@ -44,4 +44,6 @@ function gameplay_movmnt_Sine0() {
     }
 
     movment360 = (movment360 + 1) % 360;
+    
+    return;
 }

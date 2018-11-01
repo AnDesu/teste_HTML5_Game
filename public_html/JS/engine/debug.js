@@ -13,7 +13,7 @@ function debug_run()
     }
     debug_manipulateSelectedObject();
 
-
+    return;
 }
 
 //#######################
@@ -26,12 +26,14 @@ function debug_Escrever(id_Elemento, texto_Elemento)
     {
         document.getElementById(id_Elemento).innerHTML = texto_Elemento;
     }
+
     return;
 }
 
 function debug_Alert(texto)
 {
     alert(texto);
+
     return;
 }
 
@@ -50,6 +52,8 @@ function debug_Init()
     }
 
     debug_objectManipulation_Init();
+
+    return;
 }
 
 var debugOnState = 1;
@@ -61,12 +65,18 @@ function debug_SetVisible()
         document.getElementById("id_debug_Div").style.display = "none";
         document.getElementById("id_debug_Div").style.background = "";
         document.getElementById("id_debug_Div").style.opacity = "1";
-        
-        var allColisorsElements = document.getElementsByClassName("colsrs_Group");
-            for (i = 0; i < allColisorsElements.length; i++)
-            {
-                allColisorsElements[i].classList.remove("colsrs_GroupVisible");
-            }
+
+        //set invisible objects back to invisible
+        var allInvisibleElements = document.getElementsByClassName("colsrs_Group");
+        for (i = 0; i < allInvisibleElements.length; i++)
+        {
+            allInvisibleElements[i].classList.remove("objects_Desinvisible");
+        }
+        allInvisibleElements = document.getElementsByClassName("movmnt_Group");
+        for (i = 0; i < allInvisibleElements.length; i++)
+        {
+            allInvisibleElements[i].classList.remove("objects_Desinvisible");
+        }
 
         main_isAnimationtPaused = false;
     }
@@ -83,16 +93,23 @@ function debug_SetVisible()
             document.getElementById("id_debug_Div").style.background = "black";
             document.getElementById("id_debug_Div").style.opacity = "0.5";
 
-            var allColisorsElements = document.getElementsByClassName("colsrs_Group");
-            for (i = 0; i < allColisorsElements.length; i++)
+            //set invisible objects to visible
+            var allInvisibleElements = document.getElementsByClassName("colsrs_Group");
+            for (i = 0; i < allInvisibleElements.length; i++)
             {
-                allColisorsElements[i].classList.add("colsrs_GroupVisible");
+                allInvisibleElements[i].classList.add("objects_Desinvisible");
             }
-
+            allInvisibleElements = document.getElementsByClassName("movmnt_Group");
+            for (i = 0; i < allInvisibleElements.length; i++)
+            {
+                allInvisibleElements[i].classList.add("objects_Desinvisible");
+            }
 
             main_isAnimationtPaused = true;
         }
     }
+
+    return;
 }
 
 
@@ -104,11 +121,13 @@ function debug_SetVisible()
 function debug_objectManipulation_Init()
 {
     var objectsToManipulate = null;
-    
+
     objectsToManipulate = document.querySelector("#id_gameMainDiv").querySelectorAll(".objcts_setUp");
     objectsToManipulate.forEach(function (objectToManipulate) {
         objectToManipulate.addEventListener("click", debug_selectObject);
     });
+
+    return;
 }
 
 var selectedObject = null;
@@ -128,6 +147,8 @@ function debug_selectObject()
     {
         selectedObject = null;
     }
+
+    return;
 }
 
 function debug_manipulateSelectedObject()
@@ -151,5 +172,5 @@ function debug_manipulateSelectedObject()
     selectedObject.style.left = main_mousePosX + "px";
     selectedObject.style.top = main_mousePosY + "px";
 
-
+    return;
 }

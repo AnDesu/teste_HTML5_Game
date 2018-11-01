@@ -66,6 +66,7 @@ function objcts_Init_somaCruz(oneObjctsSetUpElement)
     // debug movement
     node_movmntElement0.addEventListener("click", debug_selectObject);
     
+    return;
 }
 
 
@@ -96,6 +97,8 @@ function anmtns_changAnmtns_somaCruz(anmtn_object, number)
         anmtn_object.setAttribute('data-animation_speed', '11');
         return;
     }
+    
+    return;
 }
 
 
@@ -165,4 +168,6 @@ function gameplay_anmtns_somaCruz()
     {
         anmtns_changAnmtns_somaCruz(anmtnElement0, 0);
     }
+    
+    return;
 }

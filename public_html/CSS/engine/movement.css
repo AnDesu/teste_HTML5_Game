@@ -2,16 +2,18 @@
 {
     height: 100%;
     width: 100%;
+    
     position: relative;
 }
 
 .movmnt_Group
 {
-    width: 16px;
-    height: 16px;
+    width: 8px;
+    height: 8px;
     
     position: absolute;
     
-    opacity: 0.5;
+    /*for debug*/
+    opacity: 0.0;
     background-color: #FFFFFF;
 }

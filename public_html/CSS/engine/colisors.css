@@ -1,0 +1,8 @@
+.colsrs_Group
+{
+    position: absolute;
+    
+    /*for debug*/
+    opacity: 0.0;
+    background-color: #808080;
+}

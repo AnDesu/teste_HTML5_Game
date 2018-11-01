@@ -2,7 +2,8 @@
 .debugMenu
 { 
     position: fixed;
-    z-index: 999999;        
+    z-index: 999999;   
+    
     color: white;
     font-size: 12rem;
     font-weight: bold;
@@ -16,6 +17,8 @@
     border: 2px dotted white;
     outline: 2px dotted black;
 }
+
+
 
 .debugBg1
 {

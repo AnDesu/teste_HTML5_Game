@@ -5,6 +5,8 @@
 
 function objts_removeElement(element) {
     element && element.parentNode && element.parentNode.removeChild(element);
+    
+    return;
 }
 
 
@@ -52,6 +54,8 @@ function objcts_Init()
             continue;
         }
     }
+    
+    return;
 }
 
 
@@ -82,5 +86,7 @@ function objts_getActiveObjects()
             objcts_setActive_sthRing(allObjctsActive[i]);
             continue;
         }
-    }             
+    }    
+    
+    return;
 }

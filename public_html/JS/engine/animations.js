@@ -47,4 +47,6 @@ function anmtns_doAnimations()
 //        }
 //
 //    }
+
+    return;
 }

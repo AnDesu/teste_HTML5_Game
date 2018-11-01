@@ -2,11 +2,12 @@
 //### Controle ###
 //################
 
+//Mouse
 var main_mousePosX = 0;
 var main_mousePosY = 0;
 var main_isMouseDown = false;
 
-
+//Keyboard
 var maxVal_gameButton = 60;
 
 var keyArrowUp = 38;
@@ -121,6 +122,8 @@ function contrls_Init() {
                 }
             }
     );
+    
+    return;
 }
 
 function contrls_getControls() {
@@ -256,4 +259,6 @@ function contrls_getControls() {
     debug_Escrever("id_debug_GameButton2", gameButton2);
 
     debug_Escrever("id_debug_gameButtonStart", gameButtonStart);
+    
+    return;
 }
