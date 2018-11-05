@@ -9,12 +9,12 @@ var main_fps = 16.66;
 var main_isAnimationtPaused = false;
 
 window.setInterval(function () {
-    debug_run();
+    
 
     contrls_getControls();
     
-    gamply_doActions();
-    gamply_doMovement();
+    gamply_run();
+//    gamply_doMovement();
     
     objts_getActiveObjects();
 
@@ -27,6 +27,7 @@ window.setInterval(function () {
 
 //    debug
     objts_isColliding(document.getElementById("div1"), document.getElementById("div2"));
+    debug_run();
     
     return;
 }, main_fps);
@@ -50,6 +51,7 @@ window.onload = function () {
 
 function main_GameInit()
 {
+    //show game window
     document.getElementById("id_gameMainDiv").classList.remove("disply_none");
     
     return;

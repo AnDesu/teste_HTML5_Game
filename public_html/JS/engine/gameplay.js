@@ -1,8 +1,5 @@
-//###############
-//### actions ###
-//###############
 
-function gamply_doActions()
+function gamply_run()
 {
     //Mostrar Debug Menu
     if (gameButton1 == 1)
@@ -11,21 +8,55 @@ function gamply_doActions()
         debug_SetVisible();
     }
 
+    gamply_callActions();
+    gamply_callMovements();
+
+    gamply_doMovement();
+
+    return;
+}
+
+
+
+//###############
+//### actions ###
+//###############
+
+function gamply_callActions()
+{
+    gamply_doMouseActions();
+
     if (!main_isAnimationtPaused)
     {
         gameplay_somaCruz();
     }
-    
+}
 
-    gameplay_movmnt_Sine0();
-
-    return;
+var gamply_clickedObject = null;
+function gamply_doMouseActions()
+{
+    gamply_clickedObject = null
+    var clickbleObjects = document.getElementsByClassName('objcts_clickable');
+    for (i = 0; i < clickbleObjects.length; i++)
+    {
+        if (main_isMouseDown && (objts_isColliding(main_mouseColisor, clickbleObjects[i])))
+        {            
+            gamply_clickedObject = clickbleObjects[i];
+//            debug_Alert("sadfhsaf"+gamply_clickedObject.id);
+            main_isMouseDown = false;
+            break;
+        }
+    }
 }
 
 //################
 //### movement ###
 //################
 
+function gamply_callMovements()
+{
+    gameplay_movmnt_Sine0();
+}
 function gamply_doMovement()
 {
     var allMovmntGroupElements = document.getElementsByClassName("movmnt_Group");
@@ -108,6 +139,10 @@ function gamply_doMovement()
         linkedObjectId0.style.left = allElementsToMove[i3].style.left;
         linkedObjectId0.style.top = allElementsToMove[i3].style.top;
     }
+
+    //mouse movement
+    document.getElementById("colsrs_mouse").style.left = main_mousePosX + "px";
+    document.getElementById("colsrs_mouse").style.top = main_mousePosY + "px";
 
     return;
 }

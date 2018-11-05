@@ -6,3 +6,9 @@
     opacity: 0.0;
     background-color: #808080;
 }
+
+.colsrs_mouse
+{
+    width: 10px;
+    height: 10px;
+}
