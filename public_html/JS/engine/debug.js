@@ -164,17 +164,15 @@ function debug_manipulateSelectedObject()
     debug_Escrever("id_debug_selectedObjectPosY", rect1.top);
 
 
-    if (debg_selectedObject.dataset.movement_tomove_x != "undefined")
+    if (typeof debg_selectedObject.dataset.movmnt_starting_x == "undefined")
     {
         debg_selectedObject.dataset.movement_tomove_x = main_mousePosX + "px";
         debg_selectedObject.dataset.movement_tomove_y = main_mousePosY + "px";
-//        debg_selectedObject.dataset.position_pos_x = main_mousePosX + "px";
-//        debg_selectedObject.dataset.position_pos_y = main_mousePosY + "px";
     }
     else
     {
-//        debg_selectedObject.style.left = main_mousePosX + "px";
-//        debg_selectedObject.style.top = main_mousePosY + "px";
+        debg_selectedObject.dataset.movmnt_starting_x = main_mousePosX + "px";
+        debg_selectedObject.dataset.movmnt_starting_y = main_mousePosY + "px";
     }
 
 
