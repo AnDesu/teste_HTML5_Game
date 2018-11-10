@@ -10,7 +10,7 @@ function debug_Init()
         objts_removeElement(document.getElementById('id_debug_Div'));
         return;
     }
-    
+
     return;
 }
 
@@ -20,8 +20,10 @@ function debug_run()
     {
         return;
     }
-
+        
     debug_objectManipulation_Init();
+    
+    debug_debugActions();
     debug_manipulateSelectedObject();
 
     return;
@@ -37,7 +39,6 @@ function debug_Escrever(id_Elemento, texto_Elemento)
 {
     if (isDebugOn)
     {
-//      document.getElementById(id_Elemento).innerHTML = texto_Elemento;
         document.getElementById(id_Elemento).innerText = texto_Elemento;
     }
 
@@ -51,6 +52,24 @@ function debug_Alert(texto)
         alert(texto);
     }
 
+    return;
+}
+
+
+
+//#####################
+//### debug actions ###
+//#####################
+
+function debug_debugActions()
+{
+    //Mostrar Debug Menu
+    if (gameButton1 == 1)
+    {
+        debugOnState++;
+        debug_SetVisible();
+    }
+    
     return;
 }
 
@@ -114,8 +133,6 @@ function debug_SetVisible()
 //### object manipulation ###
 //###########################
 
-var debg_selectedObject = null;
-
 function debug_objectManipulation_Init()
 {
     var objectsToManipulate = document.getElementsByClassName('movmnt_Group');
@@ -127,11 +144,12 @@ function debug_objectManipulation_Init()
     return;
 }
 
+var debg_selectedObject = null;
 function debug_manipulateSelectedObject()
 {
     if (gamply_clickedObject != null)
     {
-        debug_selectObject();       
+        debug_selectObject();
     }
 
     if (debg_selectedObject == null)
@@ -150,13 +168,13 @@ function debug_manipulateSelectedObject()
     {
         debg_selectedObject.dataset.movement_tomove_x = main_mousePosX + "px";
         debg_selectedObject.dataset.movement_tomove_y = main_mousePosY + "px";
-        debg_selectedObject.dataset.position_pos_x = main_mousePosX + "px";
-        debg_selectedObject.dataset.position_pos_y = main_mousePosY + "px";
+//        debg_selectedObject.dataset.position_pos_x = main_mousePosX + "px";
+//        debg_selectedObject.dataset.position_pos_y = main_mousePosY + "px";
     }
     else
     {
-        debg_selectedObject.style.left = main_mousePosX + "px";
-        debg_selectedObject.style.top = main_mousePosY + "px";
+//        debg_selectedObject.style.left = main_mousePosX + "px";
+//        debg_selectedObject.style.top = main_mousePosY + "px";
     }
 
 
@@ -170,7 +188,7 @@ function debug_selectObject()
         debg_selectedObject.classList.remove("debug_objctSelected");
     }
 
-    gamply_clickedObject.classList.toggle("debug_objctSelected");    
+    gamply_clickedObject.classList.toggle("debug_objctSelected");
     if (gamply_clickedObject.classList.contains("debug_objctSelected"))
     {
         debg_selectedObject = gamply_clickedObject;

@@ -25,7 +25,7 @@ window.setInterval(function () {
 
 
 
-//    debug
+    //debug
     objts_isColliding(document.getElementById("div1"), document.getElementById("div2"));
     debug_run();
     
